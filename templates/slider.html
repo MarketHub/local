@@ -1,0 +1,18 @@
+<div class="featured-section" id="projects">
+	<div class="container">
+		<div class="content-bottom-in">
+			<ul id="flexiselDemo1" ng-controller="SliderCtrl as Slide">
+				<li data-toggle="modal" data-target="#SingleProdInfoModal" ng-repeat="slider in Slide.sliders">
+					<div class="w3l-specilamk">
+						<div class="speioffer-agile">
+							<img ng-src="images/{{slider.image}}" alt="">
+						</div>
+						<div class="product-name-w3l">
+							<h4>{{slider.title}}</h4>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
