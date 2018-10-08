@@ -3830,8 +3830,8 @@ input[type="radio"], input[type="checkbox"] {
     }
     .product-men {
         margin-top: 1.5em;
-        float: none;
-        width: 100%;
+        _float: none;
+        _width: 100%;
     }
     .product-new-top {
         width: 40px;

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zxx" ng-app="100gmInfo">
+<html lang="zxx" ng-app="localmarket">
 
 <head>
 	<title>Local Market</title>
@@ -7,16 +7,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="keywords" content="local market" />
-	
-	<script>
-		addEventListener("load", function () {
-			setTimeout(hideURLbar, 0);
-		}, false);
-
-		function hideURLbar() {
-			window.scrollTo(0, 1);
-		}
-	</script>
 	
 	<script src="js/angular.js"></script>
 	<script src="index.js"></script>
@@ -35,14 +25,20 @@
 <body>
     
 	<!-- top-header -->
+	<!--
 	<div class="header-most-top">
-		<p>Welcome to Local Market</p>
+		<p>Welcome to Local Market Hub</p>
 	</div>
+	-->
 	<!-- //top-header -->
 
 	<!-- header -->
 	<ng-include src="'templates/header.html'"></ng-include>
     <!-- //header -->
+
+	<!-- banner -->
+	<ng-include src="'templates/banner.html'"></ng-include>
+    <!-- //banner -->
     
 	<!-- section -->
 	<ng-include src="'templates/section.html'"></ng-include>
@@ -57,7 +53,11 @@
 	<!-- //footer -->
 
 	<!-- copyright -->
-	<ng-include src="'templates/copyright.html'"></ng-include>
+	<!--
+	<div class="navbar-fixed-bottom">
+	   <ng-include src="'templates/copyright.html'"></ng-include>
+	</div>
+	-->
 	<!-- //copyright -->
 
 	<script src="js/jquery-2.1.4.min.js"></script>
@@ -123,9 +123,14 @@
 			$().UItoTop({
 				easingType: 'easeOutQuart'
 			});
-
 		});
+	   
+	   function scrollToSection() {
+	       window.scrollTo(0,document.querySelector(".product-sec1").scrollHeight + $(".product-sec1").height());
+	   }
+	   
 	</script>
+	
 	<!-- //smooth-scrolling-of-move-up -->
 
 	<script src="js/bootstrap.js"></script>

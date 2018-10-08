@@ -1,25 +1,45 @@
 <div class="ads-grid">
 	<div class="container">
 		<div class="agileinfo-ads-display col-md-12">
-			<div class="wrapper" ng-controller="SectionCtrl as Sect">
-				<!-- section -->
-				<div class="product-sec1" ng-repeat="section in Sect.sections">
-					<h3 class="heading-tittle">{{section.title}}</h3>
-					<div class="col-md-4 product-men" data-toggle="modal" data-target="#SingleProdInfoModal" ng-repeat="item in section.items">
+			<div class="wrapper" ng-controller="SectionCtrl as Sect" ng-init="Sect.curr_section = undefinded">
+				
+				<!-- catogory -->
+				<div id="product_cats" class="product-sec1" onclick="scrollToSection()">
+					<h3 class="heading-tittle">Explore your city</h3>
+					<div class="col-md-4 product-men" data-toggle="modal" data-target="#SingleProdInfoModal" ng-repeat="section in Sect.sections" ng-click="Sect.curr_section = section">
 						<div class="men-pro-item simpleCart_shelfItem">
 							<div class="men-thumb-item">
-								<img ng-src="images/{{item.image}}" class="img-thumbnail" alt="">
+								<img ng-src="images/{{section.image}}" class="img-thumbnail img-circle" alt="">
+							</div>
+							<div class="item-info-product">
+								<div>{{section.title}}</div>
+							</div>
+						</div>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<!-- // category -->
+
+				<!-- section -->
+				<div class="product-sec1" ng-if="Sect.curr_section">
+					<h3 class="heading-tittle">{{Sect.curr_section.title}}</h3>
+					<div class="col-md-4 product-men" data-toggle="modal" data-target="#SingleProdInfoModal" ng-repeat="item in Sect.curr_section.items">
+						<div class="men-pro-item simpleCart_shelfItem">
+							<div class="men-thumb-item">
+								<img ng-src="images/{{item.image}}" class="img-thumbnail img-responsive" alt="">
+								<!--
 								<div class="men-cart-pro">
 									<div class="inner-men-cart-pro">
 										<div class="link-product-add-cart">Quick View</div>
 									</div>
 								</div>
+								-->
 								<!--<span class="product-new-top">New</span>-->
 							</div>
 							<div class="item-info-product ">
-								<h4>
+								<h5>
 									<div>{{item.title}}</div>
-								</h4>
+								</h5>
 
 							</div>
 						</div>
