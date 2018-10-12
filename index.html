@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zxx" ng-app="localmarket">
+<html lang="en" ng-app="localmarket">
 
 <head>
 	<title>Local Market</title>
@@ -27,7 +27,7 @@
 	<!-- top-header -->
 	<!--
 	<div class="header-most-top">
-		<p>Welcome to Local Market Hub</p>
+		<p>Welcome to Local Market</p>
 	</div>
 	-->
 	<!-- //top-header -->
@@ -63,9 +63,14 @@
 	<script src="js/jquery-2.1.4.min.js"></script>
 	<script src="js/jquery-ui.js"></script>
 	
-	<!-- flexisel (for special offers) -->
+	<script src="js/bootstrap.js"></script>
+	
+	<!--<script src="js/move-top.js"></script>-->
+
 	<script src="js/jquery.flexisel.js"></script>
 	<script>
+
+    	<!-- flexisel -->
 		$(window).load(function () {
 			$("#flexiselDemo1").flexisel({
 				visibleItems: 3,
@@ -73,31 +78,29 @@
 				autoPlay: true,
 				autoPlaySpeed: 3000,
 				pauseOnHover: true,
-				enableResponsiveBreakpoints: true,
+				enableResponsiveBreakpoints: false,
 				responsiveBreakpoints: {
 					portrait: {
 						changePoint: 480,
-						visibleItems: 1
+						visibleItems: 3
 					},
 					landscape: {
 						changePoint: 640,
-						visibleItems: 2
+						visibleItems: 3
 					},
 					tablet: {
 						changePoint: 768,
-						visibleItems: 2
+						visibleItems: 3
 					}
 				}
 			});
 
 		});
-	</script>
-	<!-- //flexisel (for special offers) -->
+    	<!-- //flexisel -->
 
-	<!-- start-smooth-scrolling -->
-	<script src="js/move-top.js"></script>
-	<script>
-		jQuery(document).ready(function ($) {
+		$(document).ready(function ($) {
+    
+            <!-- start-smooth-scrolling -->
 			$(".scroll").click(function (event) {
 				event.preventDefault();
 
@@ -105,13 +108,9 @@
 					scrollTop: $(this.hash).offset().top
 				}, 1000);
 			});
-		});
-	</script>
-	<!-- //end-smooth-scrolling -->
-
-	<!-- smooth-scrolling-of-move-up -->
-	<script>
-		$(document).ready(function () {
+        	<!-- //end-smooth-scrolling -->
+        	
+            <!-- smooth-scrolling-of-move-up -->
 			/*
 			var defaults = {
 				containerID: 'toTop', // fading element id
@@ -123,18 +122,10 @@
 			$().UItoTop({
 				easingType: 'easeOutQuart'
 			});
+        	<!-- //smooth-scrolling-of-move-up -->
+        	
 		});
-	   
-	   function scrollToSection() {
-	       window.scrollTo(0,document.querySelector(".product-sec1").scrollHeight + $(".product-sec1").height());
-	   }
-	   
 	</script>
-	
-	<!-- //smooth-scrolling-of-move-up -->
-
-	<script src="js/bootstrap.js"></script>
-
 
 </body>
 

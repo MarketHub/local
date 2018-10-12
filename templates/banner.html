@@ -5,15 +5,9 @@
 		<li ng-repeat="banner in Banner.banners" data-target="#myCarousel" data-slide-to="{{$index}}" ng-class="{ 'active' : $index == 0 }" ></li>
 	</ol>
 	<div class="carousel-inner" role="listbox">
-		<div class="item item{{$index}}" ng-repeat="banner in Banner.banners" ng-class="{ 'active' : $index == 0 }">
+		<div class="item item{{$index}}" ng-repeat="banner in Banner.banners" ng-class="{ 'active' : $index == 0 }" style="background-image : url(images/{{banner.image}})">
 			<div class="container">
-				<div class="carousel-caption">
-					<!--
-					<h3>Big <span>Save</span></h3>
-					<p>Get flat <span>10%</span> Cashback</p>
-					<a class="button2" href="product.html">Shop Now </a>
-					-->
-				</div>
+				<div class="carousel-caption"></div>
 			</div>
 		</div>
 	</div>

@@ -1,52 +1,54 @@
 <div class="ads-grid">
 	<div class="container">
 		<div class="agileinfo-ads-display col-md-12">
-			<div class="wrapper" ng-controller="SectionCtrl as Sect" ng-init="Sect.curr_section = undefinded">
+			<div class="wrapper" ng-controller="SectionCtrl as Sec" onclick="scrollToBottom()">
 				
-				<!-- catogory -->
-				<div id="product_cats" class="product-sec1" onclick="scrollToSection()">
+				<!-- city -->
+				<div class="product-sec1" ng-init="Sec.curr_cat = undefinded">
 					<h3 class="heading-tittle">Explore your city</h3>
-					<div class="col-md-4 product-men" data-toggle="modal" data-target="#SingleProdInfoModal" ng-repeat="section in Sect.sections" ng-click="Sect.curr_section = section">
+					<div class="col-md-4 product-men" data-toggle="modal" data-target="#SingleProdInfoModal" ng-repeat="cat in Sec.cats" ng-click="Sec.curr_cat = cat">
 						<div class="men-pro-item simpleCart_shelfItem">
 							<div class="men-thumb-item">
-								<img ng-src="images/{{section.image}}" class="img-thumbnail img-circle" alt="">
+								<img ng-src="images/{{cat.image}}" class="img-thumbnail img-circle" alt="">
 							</div>
-							<div class="item-info-product">
-								<div>{{section.title}}</div>
+							<div class="item-info-product">{{cat.title}}</div>
+						</div>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<!-- // city -->
+
+				<!-- category -->
+				<div class="product-sec1" ng-if="Sec.curr_cat" ng-init="Sec.curr_market = undefinded">
+					<h3 class="heading-tittle">{{Sec.curr_cat.title}}</h3>
+					<div class="col-md-4 product-men" data-toggle="modal" data-target="#SingleProdInfoModal" ng-repeat="market in Sec.curr_cat.markets" ng-click="Sec.curr_market = market">
+						<div class="men-pro-item simpleCart_shelfItem">
+							<div class="men-thumb-item">
+								<img ng-src="images/{{market.image}}" class="img-responsive" alt="">
+							</div>
+							<div class="item-info-product ">
+								<h5>{{market.title}}</h5>
 							</div>
 						</div>
 					</div>
 					<div class="clearfix"></div>
 				</div>
 				<!-- // category -->
-
-				<!-- section -->
-				<div class="product-sec1" ng-if="Sect.curr_section">
-					<h3 class="heading-tittle">{{Sect.curr_section.title}}</h3>
-					<div class="col-md-4 product-men" data-toggle="modal" data-target="#SingleProdInfoModal" ng-repeat="item in Sect.curr_section.items">
-						<div class="men-pro-item simpleCart_shelfItem">
-							<div class="men-thumb-item">
-								<img ng-src="images/{{item.image}}" class="img-thumbnail img-responsive" alt="">
-								<!--
-								<div class="men-cart-pro">
-									<div class="inner-men-cart-pro">
-										<div class="link-product-add-cart">Quick View</div>
-									</div>
-								</div>
-								-->
-								<!--<span class="product-new-top">New</span>-->
+				
+				<!-- // market -->
+				<div _class="product-sec1" ng-if="Sec.curr_market">
+    				<h3 class="heading-tittle">{{Sec.curr_market.title}}</h3>
+    				<ul id="flexiselDemo1" class="list-unstyled">
+    					<li class="col-md-4 product-men" ng-repeat="outlet in Sec.curr_market.outlets">
+							<img ng-src="images/{{outlet.image}}" class="img-thumbnail img-responsive" alt="">
+							<div class="product-name-w3l">
+								<h5>{{outlet.title}}</h5>
 							</div>
-							<div class="item-info-product ">
-								<h5>
-									<div>{{item.title}}</div>
-								</h5>
-
-							</div>
-						</div>
-					</div>
-					<div class="clearfix"></div>
-				</div>
-				<!-- // section -->
+    					</li>
+    				</ul>
+    			</div>
+    			<!-- // market-->
+    			
 			</div>
 		</div>
 	</div>
