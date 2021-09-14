@@ -1,11 +1,11 @@
 <div class="ads-grid">
 	<div class="container">
-		<div class="agileinfo-ads-display col-md-12">
+		<div class="col-md-12">
 			<div class="wrapper" ng-controller="SectionCtrl as Sec" onclick="scrollToBottom()">
 				
 				<!-- city -->
 				<div class="product-sec1" ng-init="Sec.curr_cat = undefinded">
-					<h3 class="heading-tittle">Explore your city</h3>
+					<h3 class="heading-tittle">Explore</h3>
 					<div class="col-md-4 product-men" data-toggle="modal" data-target="#SingleProdInfoModal" ng-repeat="cat in Sec.cats" ng-click="Sec.curr_cat = cat">
 						<div class="men-pro-item simpleCart_shelfItem">
 							<div class="men-thumb-item">
@@ -36,7 +36,7 @@
 				<!-- // category -->
 				
 				<!-- // market -->
-				<div _class="product-sec1" ng-if="Sec.curr_market">
+				<div _class="product-sec1" ng-if="Sec.curr_market.outlets">
     				<h3 class="heading-tittle">{{Sec.curr_market.title}}</h3>
     				<ul id="flexiselDemo1" class="list-unstyled">
     					<li class="col-md-4 product-men" ng-repeat="outlet in Sec.curr_market.outlets">

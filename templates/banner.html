@@ -1,9 +1,11 @@
 <!-- banner -->
 <div id="myCarousel" class="carousel slide" data-ride="carousel" ng-controller="BannerCtrl as Banner">
 	<!-- Indicators-->
+	<!--
 	<ol class="carousel-indicators">
 		<li ng-repeat="banner in Banner.banners" data-target="#myCarousel" data-slide-to="{{$index}}" ng-class="{ 'active' : $index == 0 }" ></li>
 	</ol>
+	-->
 	<div class="carousel-inner" role="listbox">
 		<div class="item item{{$index}}" ng-repeat="banner in Banner.banners" ng-class="{ 'active' : $index == 0 }" style="background-image : url(images/{{banner.image}})">
 			<div class="container">
